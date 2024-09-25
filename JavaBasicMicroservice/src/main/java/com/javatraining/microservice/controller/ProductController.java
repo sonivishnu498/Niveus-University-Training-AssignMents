@@ -1,7 +1,10 @@
-package com.javaTraining.microservice.controller;
+package com.javatraining.microservice.controller;
 
 import java.util.List;
+import java.util.Optional;
 
+import com.javatraining.microservice.entity.Product;
+import com.javatraining.microservice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javaTraining.microservice.entity.Product;
-import com.javaTraining.microservice.service.ProductService;
+
 
 @RestController
 @RequestMapping("/product")
@@ -32,7 +34,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/{id}")
-	public Product getProductById(@PathVariable Long id) {
+	public Optional<Product> getProductById(@PathVariable Long id) {
 		
 		return productService.getProductById(id);
 	}

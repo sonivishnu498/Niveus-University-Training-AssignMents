@@ -1,42 +1,44 @@
-package com.javaTraining.microservice.service;
+package com.javatraining.microservice.service;
 
-import java.util.List;
-
+import com.javatraining.microservice.entity.Product;
+import com.javatraining.microservice.repositoy.ProductRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javaTraining.microservice.entity.Product;
-import com.javaTraining.microservice.repositoy.ProductRepo;
+import java.util.List;
+import java.util.Optional;
+
+
 @Service
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	private ProductRepo repo;
 
+	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+
 	@Override
 	public List<Product> getAll() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
 	public Product addProduct(Product product) {
-		// TODO Auto-generated method stub
 		return repo.save(product);
 	}
 
 	@Override
-	public Product getProductById(Long id) {
-		// TODO Auto-generated method stub
-		Product product = repo.findById(id).get();
-		return product;
+	public Optional<Product> getProductById(Long id) {
+
+		return  repo.findById(id);
 	}
 
 	@Override
 	public void deleteProduct(Long id) {
 		repo.deleteById(id);
-		
-		System.out.println("Product "+id+" deleted Successfully");
+		logger.info("product deleted");
 		
 	}
 

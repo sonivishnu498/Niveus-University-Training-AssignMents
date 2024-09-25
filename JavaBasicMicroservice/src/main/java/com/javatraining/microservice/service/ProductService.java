@@ -1,8 +1,11 @@
-package com.javaTraining.microservice.service;
+package com.javatraining.microservice.service;
+
+import com.javatraining.microservice.entity.Product;
 
 import java.util.List;
+import java.util.Optional;
 
-import com.javaTraining.microservice.entity.Product;
+
 
 public interface ProductService {
 	
@@ -10,7 +13,7 @@ public interface ProductService {
 	
 	public Product addProduct(Product product);
 	
-	public Product getProductById(Long id);
+	public Optional<Product> getProductById(Long id);
 	
 	public void deleteProduct(Long id);
 

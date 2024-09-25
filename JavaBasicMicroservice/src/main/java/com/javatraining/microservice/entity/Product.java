@@ -1,4 +1,4 @@
-package com.javaTraining.microservice.entity;
+package com.javatraining.microservice.entity;
 
 import java.util.Objects;
 
@@ -6,20 +6,26 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+
+	@NotNull(message = "product should not be null")
+	@Size(min = 2,max = 15)
 	private String name;
-	
+	@NotNull(message = "price should not be null")
+	@Min(value = 1,message = "price should be atleast 1")
 	private double price;
 
 	public Product() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Product(Long id, String name, double price) {
@@ -75,7 +81,5 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
 	}
-	
-	
 
 }
