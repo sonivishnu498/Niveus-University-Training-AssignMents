@@ -1,0 +1,5 @@
+package com.niveus.crud.entity;
+
+public class Employee {
+
+}
