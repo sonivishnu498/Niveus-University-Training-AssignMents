@@ -1,2 +1,2 @@
-# Niveus-University-Training-AssignMent-1
+# Niveus-University-Training-AssignMent
 basic training
