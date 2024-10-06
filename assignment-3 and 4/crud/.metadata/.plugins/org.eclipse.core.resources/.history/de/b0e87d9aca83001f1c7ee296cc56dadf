@@ -1,0 +1,15 @@
+spring.application.name=crud
+
+
+
+spring.datasource.url=jdbc:postgresql://34.74.136.9:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=vishnu123
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+
+
+
+

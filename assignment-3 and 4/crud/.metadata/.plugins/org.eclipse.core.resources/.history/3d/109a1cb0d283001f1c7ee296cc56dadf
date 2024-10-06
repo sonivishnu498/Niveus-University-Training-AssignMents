@@ -1,0 +1,20 @@
+package snippet;
+
+public class Snippet {
+	# Use an official OpenJDK runtime as a parent image
+	FROM openjdk:17-jdk-slim
+	
+	# Set the working directory in the container
+	WORKDIR /app
+	
+	# Add the application JAR file (replace 'your-app.jar' with the actual jar name)
+	COPY target/your-app.jar app.jar
+	
+	# Expose the port the app runs on
+	EXPOSE 8080
+	
+	# Run the jar file
+	ENTRYPOINT ["java", "-jar", "app.jar"]
+	
+}
+

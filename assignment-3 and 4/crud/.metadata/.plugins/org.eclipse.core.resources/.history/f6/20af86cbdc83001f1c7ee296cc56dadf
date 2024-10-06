@@ -1,0 +1,21 @@
+# Use the official Java 17 image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the pom.xml and the source code to the container
+COPY pom.xml .
+COPY src ./src
+
+# Build the application (change this if you're using Gradle)
+RUN mvn clean package -DskipTests
+
+# Copy the built JAR file to the container (change the path if needed)
+COPY target/crud-0.0.1-SNAPSHOT.jar app.jar
+
+# Set the entry point for the container
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Expose the application's port (if needed)
+EXPOSE 8080

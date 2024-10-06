@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-java-app-deployment
+  labels:
+    app: my-java-app
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: my-java-app
+  template:
+    metadata:
+      labels:
+        app: my-java-app
+    spec:
+      containers:
+      - name: my-java-app
+        image: us-central1-docker.pkg.dev/clever-hangar-437215-p2/niveus-assignment-4/myapp:latest
+        ports:
+        - containerPort: 8080 
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "prod"
+        resources:
+          requests:
+            memory: "512Mi" 
+            cpu: "500m" 
+          limits:
+            memory: "1Gi"  
+            cpu: "1"  

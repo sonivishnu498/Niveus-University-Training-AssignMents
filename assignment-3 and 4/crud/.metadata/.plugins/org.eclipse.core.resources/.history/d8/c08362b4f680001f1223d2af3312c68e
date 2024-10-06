@@ -1,0 +1,14 @@
+spring.application.name=crud
+
+spring.datasource.url=jdbc:postgresql://34.131.60.74:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=vishnu123
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.hikari.data-source-properties.useSSL=true
+spring.datasource.hikari.data-source-properties.requireSSL=true
+
+spring.datasource.hikari.connection-timeout=30000
+
+
