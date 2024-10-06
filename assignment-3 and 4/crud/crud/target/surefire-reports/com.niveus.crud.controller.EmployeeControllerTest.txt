@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.niveus.crud.controller.EmployeeControllerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.194 s -- in com.niveus.crud.controller.EmployeeControllerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.108 s -- in com.niveus.crud.controller.EmployeeControllerTest

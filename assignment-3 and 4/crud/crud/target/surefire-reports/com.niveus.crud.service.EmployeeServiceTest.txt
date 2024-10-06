@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.niveus.crud.service.EmployeeServiceTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.260 s -- in com.niveus.crud.service.EmployeeServiceTest

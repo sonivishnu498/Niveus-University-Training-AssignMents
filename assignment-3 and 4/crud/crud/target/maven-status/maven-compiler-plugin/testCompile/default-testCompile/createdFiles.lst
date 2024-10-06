@@ -1,2 +1,3 @@
 com\niveus\crud\CrudApplicationTests.class
+com\niveus\crud\service\EmployeeServiceTest.class
 com\niveus\crud\controller\EmployeeControllerTest.class
