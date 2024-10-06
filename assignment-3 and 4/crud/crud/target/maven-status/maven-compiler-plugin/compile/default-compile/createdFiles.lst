@@ -1,0 +1,5 @@
+com\niveus\crud\repo\EmployeeRepository.class
+com\niveus\crud\controller\EmployeeController.class
+com\niveus\crud\service\EmployeeService.class
+com\niveus\crud\CrudApplication.class
+com\niveus\crud\entity\Employee.class
