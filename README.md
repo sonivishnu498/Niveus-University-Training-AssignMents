@@ -13,3 +13,5 @@ STEP 14: Write Unit test cases for the API created
 
 STEP 15: Measure the code coverage of the API using SonarLint.
 
+code coverage is generate in assignment-3 and 4/crud/crud/target/site/jacoco
+
