@@ -14,7 +14,7 @@ class CrudApplicationTests {
 
 	@Autowired
 	private ApplicationContext applicationContext;
-	
+
 	@Test
 	void testEmployeeControllerLoaded() {
 		// Verify that the EmployeeController bean is loaded in the application context
