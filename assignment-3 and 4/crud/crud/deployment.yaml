@@ -1,31 +1,40 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: "apps/v1"
+kind: "Deployment"
 metadata:
-  name: my-java-app-deployment
+  name: "deployment-nives-assignment4"
+  namespace: "default"
   labels:
-    app: my-java-app
+    app: "deployment-nives-assignment4"
 spec:
-  replicas: 3 
+  replicas: 3
   selector:
     matchLabels:
-      app: my-java-app
+      app: "deployment-nives-assignment4"
   template:
     metadata:
       labels:
-        app: my-java-app
+        app: "deployment-nives-assignment4"
     spec:
       containers:
-      - name: my-java-app
-        image: us-central1-docker.pkg.dev/clever-hangar-437215-p2/niveus-assignment-4/myapp:latest
-        ports:
-        - containerPort: 8080 
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: "prod"
-        resources:
-          requests:
-            memory: "512Mi" 
-            cpu: "500m" 
-          limits:
-            memory: "1Gi"  
-            cpu: "1"  
+      - name: "myapp-1"
+        image: "us-east1-docker.pkg.dev/clever-hangar-437215-p2/niveus-assignment-4/myapp:latest"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "deployment-nives-assignment4-hpa-7tcr"
+  namespace: "default"
+  labels:
+    app: "deployment-nives-assignment4"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "deployment-nives-assignment4"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: "Resource"
+    resource:
+      name: "cpu"
+      targetAverageUtilization: 80
